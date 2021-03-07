@@ -1,0 +1,17 @@
+{
+    p:[
+        {
+            'user':'04191001',
+            'password':'qqqwww'            
+        },   
+        {
+            'user':'04191002',
+            'password':'123wwwbbb'            
+        },   
+        {
+            'user':'04191003',
+            'password':'aaabbb'            
+        }
+    ]
+
+}

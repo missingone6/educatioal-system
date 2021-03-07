@@ -1,0 +1,290 @@
+/* #layer{
+    width: 1190px;
+    margin:0 auto;
+} */
+body{
+    user-select: none;
+    background-color: rgb(240, 240, 240);
+}
+.small-item:hover{
+    background-color: salmon;
+}
+.box{
+    margin-bottom: 20px;
+}
+#header{
+    height: 60px;
+    background-color: rgb(4, 131, 212);
+}
+#header .tips{
+    font-size:20px;
+    color:white;
+}
+
+#header .h-box{
+    height: 60px;
+    cursor: pointer;
+}
+
+#header .h-box .h-dropDownList{
+    display: none;
+    height: 60px;
+    width: 100px;
+    background-color: skyblue;
+    cursor: pointer;
+}
+#header .h-box .h-item{
+    line-height: 30px;
+    height: 30px;
+}
+#header .h-box .h-item:hover{
+    background-color: rgb(119, 189, 232);
+}
+
+#header .headPortrait{
+    margin:16px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+#personalDetail,
+#courseTimetable,
+#news{
+    float: left;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border-right:1px solid rgb(240, 240, 240);
+}
+
+#message,
+#document,
+#grade{
+    float:right;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+#nav{
+    height: 66px;
+}
+#nav .item:hover{
+    background-color: rgb(178, 197, 209);
+}
+#nav .drop-downList{
+    height: 100%;
+}
+#nav li.item{
+    position: relative;
+    width: 100px;
+    height: 100%;
+
+}
+#nav .drop-title{
+    width: 66px;
+    height: 22px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    
+}
+#nav .drop-item{
+    position: absolute;
+}
+#nav .smallmenu{
+    display: none;
+    position: absolute;
+    top:100%;
+    z-index:2;
+    background-color: rgb(234, 234, 234);
+}
+#nav .smallmenu .small-item{
+    padding-left: 5px;
+    line-height: 22px;
+    width: 120px;
+    height: 22px;
+    font-size: 12px;
+}
+.caret{
+    margin-top: 30px;
+    margin-right: 22px;
+    margin-bottom: 22px;
+    width: 0;
+    height: 0;
+    border: 6px solid;
+    border-top-color: black;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+.clearfix:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+#personalDetail,
+#message{
+    height: 150px;
+}
+
+#personalDetail .classGrade{
+    font-size:12px;
+    transform: scale(.7);
+    transform-origin: left;
+}
+
+#personalDetail .myHead{
+    width: 100px;
+    height: 100px;
+    margin:25px 0;
+    border-radius: 50%;
+}
+
+
+.u-item:hover{
+    background-color: #f5f5f5;
+
+}
+
+#message .u-item{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.red{
+    color:red;
+}
+
+#message .u-message{
+    height: 150px;
+    overflow: scroll;
+}
+
+#courseTimetable,
+#document{
+    height: 231px;
+}
+#courseTimetable h3{
+    height: 16px;
+}
+#courseTimetable .u-item{
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px dashed #c0c0c0;
+    font-size: 15px;
+}
+#courseTimetable .u-message{
+    height: 200px;
+    overflow: hidden;
+}
+#courseTimetable .more{
+    height: 15px;
+    line-height: 15px;
+    color:blue;
+}
+#document h3,
+#grade h3{
+    height: 16px;
+}
+#document .u-message,
+#grade .u-message{
+    height: 200px;
+}
+#document .u-item,
+#grade .u-item{
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px dashed #c0c0c0;
+    font-size: 15px;
+}
+#news,
+#grade{
+    height: 231px;
+}
+
+#changePassword{
+    display: none;
+    position: fixed;
+    top: 50%;
+    right:50%;
+    transform: translate(50%,-50%);
+    width: 600px;
+    height: 280px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+
+#changePassword .c-head{
+    padding-left: 10px;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(37, 135, 222);
+    color:white;
+    cursor: move;
+}
+
+#changePassword .row{
+    margin:10px 0;
+    line-height: 30px;
+    height: 30px;
+}
+#changePassword .rowLeft{
+    float: left;
+    padding-right: 10px;
+    width: 180px;
+    font-weight: 700;
+}
+#changePassword .rowRight{
+    float: right;
+    width: 420px;
+}
+#changePassword .rowInput{
+    padding: 0 5px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+/* #changePassword */
+#changePassword .row2{
+    padding-right: 10px;
+    height: 60px;
+    line-height: 60px;
+    border-top:1px solid rgb(229, 229, 229);
+    cursor: move;
+
+
+}
+#changePassword .c-btn{
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    border:none;
+    border-radius: 5px;
+}
+#changePassword .c-submit{
+    background-color:rgb(0, 118, 193);
+    color:white;    
+}
+#changePassword .c-icon{
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+#shadow{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    background-color: #3c3c3c;
+}

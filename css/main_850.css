@@ -1,0 +1,10 @@
+#personalDetail,
+#courseTimetable,
+#news,
+#message,
+#document,
+#grade{
+
+    width: 100%!important;
+    margin-bottom:10px;
+}

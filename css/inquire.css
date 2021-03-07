@@ -1,0 +1,89 @@
+body{
+    background-color: rgb(240, 240, 240);
+}
+.layer{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.title{
+    padding-left: 10px;
+    line-height: 50px;
+    height: 50px;
+    background-color: rgb(4, 131, 212);
+    color:white;
+}
+
+.body{
+    background-color: #fff;
+    margin-top: 20px;
+
+}
+.row{
+    line-height: 60px;
+    height: 60px;
+}
+.col-1{
+    width: 30%;
+    margin-left: 12px;
+    margin-right: 50px;
+    font-size: 20px;
+    color:rgb(79, 129, 175);
+}
+.ml10{
+    margin-left: 10px;
+}
+.c-box{
+    width: 300px;
+}
+.col-2{
+    margin-left: 12px;
+    line-height: 42px;
+    text-align: center;
+    width: 88px;
+    height: 42px;
+    color:rgb(80, 141, 193);
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.col-2:hover{
+    background-color: rgb(238, 238, 238);
+}
+.choose{
+    margin-top: 20px;
+}
+.active{
+    border-top:2px solid rgb(239, 177, 19);
+    border-left:2px solid rgb(221, 221, 221);
+    border-right:2px solid rgb(221, 221, 221);
+    border-radius: 5px;
+}
+
+.basicInf{
+    margin-top: 20px;
+}
+.col-3{
+    margin: 3px 0;
+    width: 33%;
+    line-height: 30px;
+    height: 30px;
+}
+.row2{
+    margin-left: 12px;
+}
+.col-4{
+    margin-left: 10px;
+}
+
+
+.leftTips{
+    text-align: right;
+    width: 30%;
+    font-weight: 700;
+}
+.statusInf,
+.otherInf{
+    display: none;
+}

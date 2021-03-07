@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.fr{
+    float:right
+}
+.fl{
+    float: left;
+}
+
+@media screen and (min-width: 767px) {
+    .max {
+        width: 767px!important;
+    }
+}
+
+#contain {
+    width: 100%;
+}
+#contain .mainPart .m-row{
+    width: 100%;
+    height: 25px;
+}
+#contain .mainPart .m-row label{
+    width: 15%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+#contain .mainPart .m-row input{
+    width: 80%;
+}
+#contain .mainPart .m-row input[type="button"]{
+    display: block;
+    margin:10px 0;
+    width: 95%;
+    height: 25px;
+    cursor: pointer;
+    background-color: rgb(0, 118, 193);
+    border:none;
+    border-radius: 10px;
+    outline:none;
+}
+#contain form.logReg{
+    padding: 15px;
+}
+#contain .header .title{
+    font:normal 24px/45px "microsoft YaHei";
+    color: rgb(0, 62, 141);
+}
+#contain .m-tips{
+    padding: 20px 0;
+    width: 100%;
+    background-color: rgb(242, 222, 222);
+    color:rgb(169, 68, 66);
+}

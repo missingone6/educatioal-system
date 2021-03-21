@@ -41,7 +41,7 @@ function ajax(method: string, url: string, data: string, success: any, fail: any
 // '港澳台侨外','国籍/地区','学生类型'],
 // document.getElementsByClassName('basicInf')[0]);
 
-// insertInf([
+// insertInf([g
 //     '年级','学院名称','系名称',
 //     '专业方向','班级名称','专业名称',
 //     '学制','学籍状态','',
@@ -82,34 +82,6 @@ document.getElementsByClassName('c-box')[0].onclick = function (event: any) {
     document.getElementsByClassName(control[target.innerHTML])[0].style.display = 'block';
 }
 
-// function insertInf(title: Array,grandfather:any) {
-//     for (let i = 0; i < title.length; ) {
-//         let father: any = document.createElement('div');
-//         father.classList.add('row');
-//         father.classList.add('clearfix');
-//         father.innerHTML = `
-//         <div class="clearfix col-3 fl">
-//         <div class="leftTips fl">
-//             ${title[i++]}:
-//         </div>
-//         <span class="stuId col-4"></span>
-//         </div>  
-//         <div class="clearfix col-3 fl">
-//             <div class="leftTips fl">
-//                 ${title[i++]}:
-//             </div>
-//             <span class="stuName col-4"></span>
-//         </div>
-//         <div class="clearfix col-3 fl">
-//             <div class="leftTips fl">
-//                 ${title[i++]}:
-//             </div>
-//             <span class="stuName col-4"></span>
-//         </div>
-//         `;
-//         grandfather.appendChild(father);
-//     }
-// }
 
 
 function insertInf(data: any, grandfather: any,orginal:any) {
@@ -144,20 +116,31 @@ function insertInf(data: any, grandfather: any,orginal:any) {
     }
 }
 
-
+let p2;
 function replaceProp(data:any,orginal:any):any{
     let res = {};
     for(let prop1 in data){
         let find = false;
         for(let prop2 in orginal){
+            p2 = prop2;
             if(prop1 === prop2){
+                
                 res[orginal[prop1]] = data[prop1];
                 find = true;
                 break;
             }
         }
         if(find === false){
+            console.log(prop1,p2);
             throw Error('出错了');
+        }
+    }
+    for(let prop1 in res){
+        if(res[prop1] === 'true'){
+            res[prop1] = '是';
+        }
+        else if(res[prop1] === 'false'){
+            res[prop1] = '否';
         }
     }
     return res;
@@ -179,10 +162,10 @@ const studentStatus = {
     'grade':'年级',
     'whetherOrNotIntheSchool':'是否在校',
     'trainingLevel':'培养层次',
-    'nameOfCollege':'学院名称',
+    'college':'学院名称',
     'className':'班级名称',
     'registrationStatus':'报到注册状态',//报到注册状态
-    'nameOfMajor':'专业名称',
+    'major':'专业名称',
     'lengthOfSchooling':'学制',
     'status':'学籍状态',
     'majorID':'招生专业'

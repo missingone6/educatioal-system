@@ -112,3 +112,48 @@ document.getElementsByClassName('c-submit')[0].onclick = function () {
         document.getElementsByClassName('r-tips')[0].innerHTML = '很抱歉，两次密码输入不同';
     }
 };
+// 课表，成绩刷新
+(function () {
+    ajax("post", "http://www.xinill.cn:80/class/grade", `schoolyear=2021&term=1&sortBy=term&sort=up`, function (xml) {
+        let res = JSON.parse(xml.responseText);
+        let li;
+        let father = document.querySelector('#grade .u-message');
+        for (let i in res.data) {
+            li = document.createElement('li');
+            li.classList.add('u-item');
+            li.innerHTML = `
+            <a href="#">
+                <div class="fl">${res.data[i].coursetype}-${res.data[i].coursecode}-${res.data[i].course}</div>
+                <div class="fr">${res.data[i].achievement}</div>
+            </a>    
+            `;
+            father.appendChild(li);
+        }
+    }, function (xml) {
+    }, localStorage.token);
+    ajax("post", "http://www.xinill.cn:80/class/timeline", `schoolyear=2021&term=1`, function (xml) {
+        let res = JSON.parse(xml.responseText);
+        let li;
+        console.log(res);
+        let father = document.querySelector('#courseTimetable .u-message');
+        for (let i in res.data) {
+            if (res.data[i].length === 0) {
+                continue;
+            }
+            else {
+                for (let j in res.data[i]) {
+                    li = document.createElement('li');
+                    li.classList.add('u-item');
+                    li.innerHTML = `
+                    <a href="#">
+                        <div>${res.data[i][j].week}周-星期${j + 1}-${res.data[i][j].place}-${res.data[i][j].teacher}-${res.data[i][j].testtype}
+                        </div>
+                    </a>  
+                    `;
+                    father.appendChild(li);
+                }
+            }
+        }
+    }, function (xml) {
+    }, localStorage.token);
+})();

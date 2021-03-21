@@ -122,7 +122,7 @@ document.getElementsByClassName('c-submit')[0].onclick = function () {
             li = document.createElement('li');
             li.classList.add('u-item');
             li.innerHTML = `
-            <a href="#">
+            <a href="teamTable.html">
                 <div class="fl">${res.data[i].coursetype}-${res.data[i].coursecode}-${res.data[i].course}</div>
                 <div class="fr">${res.data[i].achievement}</div>
             </a>    
@@ -145,7 +145,7 @@ document.getElementsByClassName('c-submit')[0].onclick = function () {
                     li = document.createElement('li');
                     li.classList.add('u-item');
                     li.innerHTML = `
-                    <a href="#">
+                    <a href="scoreSearch.html">
                         <div>${res.data[i][j].week}周-星期${j + 1}-${res.data[i][j].place}-${res.data[i][j].teacher}-${res.data[i][j].testtype}
                         </div>
                     </a>  

@@ -75,6 +75,7 @@ function changeOrder(){
         iconfont1[i].onclick =()=>{
             let num:Array<string> = yeartext.innerText.split("-")
             // let xml:any;
+            console.log("inconfont1")
             let num1:string = yeartext1.innerText;
             let num2 = iconfont1[i].parentElement.parentElement.id;
             ajax("post","http://www.xinill.cn:80/class/grade",`schoolyear=${num[0]}&term=${num}&sortBy=${num2}&sort=up`,function (xml:any) {
@@ -95,7 +96,7 @@ function changeOrder(){
                 else {
                     alert(res.msg);
                 }
-            }, function (xml:any) {},localStorage.token);
+            }, function (xml:any) {},token);
         }
     }
     for(let i=0;i<iconfont2;i++){
@@ -122,7 +123,7 @@ function changeOrder(){
                 else {
                     alert(res.msg);
                 }
-            }, function (xml:any) {},localStorage.token);
+            }, function (xml:any) {},token);
         }
         }
     }

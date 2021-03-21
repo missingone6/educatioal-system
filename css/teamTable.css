@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#searchbox{
+    width: 98%;
+    border: 2px #f0f0f0 solid;
+}
+.determine{
+    width: 7%;
+}
+.tabl{
+    width: 96%;
+    border-width: 1px;
+    margin: auto;
+    padding: 30px 10px 30px 10px;
+}
+table{
+    text-align: center;
+    border-collapse: collapse;
+}
+.titlebor{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    /* padding: 2px #f0f0f0; */
+}
+caption{
+    height: 40px;
+    line-height: 40px;
+    font-size: 28px;
+    /* border: 0.5px #666666 solid; */
+}
+hr{
+    background-color: #f0f0f0ea;
+}
+tr{
+    display: table-row; 
+    vertical-align: inherit;
+    border-color: inherit;
+    border: 1px #666666 solid;
+}                                                       
+td{
+    border: 1px #666666 solid;
+    vertical-align: middle;
+}
+.font16{
+    font-size: 16px;
+}
+.w-5{
+    width: 5%;
+}
+.w7-5{
+    width: 7.5%;
+}
+.w17-5{
+    width: 17.5%;
+}
+.w100{
+    width: 100%;
+}
+.table-line{
+    margin: auto;
+}
+.time{
+    font: normal 18px/25px "microsoft YaHei";
+    text-align: center;
+    color: #666666;
+}
+.festival{
+    color: #666666;
+    font: bold 18px/60px verdana;
+    text-align: center;
+    font-style: italic;
+    height: auto !important;
+    height: 60px;
+    min-height: 60px;
+    display: block;
+}
+.text-left{
+
+    text-align: left;
+    padding: 8px;
+}
+.typeface1{
+    color: blue;
+    font-weight: 500;
+    font-size: 18px;
+    font: bold 15px/25px SimSun;
+}
+.typeface2{
+    color: blue;
+    font-weight: 300;
+    font-size: 14px;
+    font: normal 13px/25px SimSun;
+}
+.practice{
+    width: 98%;
+    padding: 0px 0px 20px 15px;
+}
+#schoolYearBox,
+#searchbtn{
+    width: 100%;
+    margin: auto;
+    height: 90px;
+    line-height: 55px;
+}
+tr:hover{
+    background-color: #f0f0f0;
+}

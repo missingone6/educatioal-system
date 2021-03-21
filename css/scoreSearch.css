@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/iconfont.woff2') format('woff2'),
+        url('../font/iconfont.woff') format('woff'),
+        url('../font/iconfont.ttf') format('truetype'),
+        url('../font/iconfont.svg#iconfont') format('svg');
+  }
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 6px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+.iconfont1{
+    /* display: inline-block; */
+    /* margin-top: -4px; */
+    /* content: "\e113"; */
+    height: 10px;
+    /* height: 4px; */
+
+  }
+.iconfont2{
+    /* display: inline-block; */
+    height: 10px;
+    /* content: "\e114"; */
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    /* margin: auto; */
+    /* text-align: center; */
+    list-style: none;
+}
+#schoolYearBox,
+#searchbtn{
+    width: 100%;
+    margin: auto;
+    height: 150px;
+    line-height: 55px;
+}
+#determine{
+    width: 5%;
+}
+.words{
+    margin-left: 1%;
+}
+#scoreTable{
+    /* margin-top: 30px; */
+    width: 95%;
+    /* height: 80px; */
+    line-height: 20px;
+    overflow-x: auto;
+    border: 1px #f0f0f0 solid;
+    margin: auto;
+    margin: 20px 2.5%;
+}
+.yeartitle{
+    margin-left: 1%;
+    height: 70px;
+    line-height: 70px;
+}
+.yeartop,
+.yeartop1,
+.yeartop2{
+    margin-top: 2%;
+}
+.yearul,
+.yearul1,
+.yearul2{
+    height: 70px;
+	display: none;
+    overflow: auto;
+    background-color: #fff;
+}
+.yeartop1:hover .yearul1{
+	display: block;
+	clear: both;
+}
+.yeartop:hover .yearul{
+	display: block;
+	clear: both;
+}
+.yeartop2:hover .yearul2{
+	display: block;
+	clear: both;
+}
+span div{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align:center;
+    border: 1px #f0f0f0 solid;
+    width: 20%;
+    margin-left: 3%;
+    /* overflow: hidden; */
+}
+
+.tableline{
+    width: 3710px;
+    overflow-y: auto;
+}
+.td{
+    /* overflow-y: scroll; */
+    border: 1px #d3d3d3 solid;
+    /* white-space: nowrap; 置如何处理元素内的空白*/
+}
+.tabletop{
+    display: block;
+}
+.tabs{
+    text-overflow : clip;
+    white-space:nowrap;
+    height: 20px;
+    /* line-height: 30px; */ 
+    display: flex;
+    width: 130px;
+    margin: auto;
+    text-align: center;
+    /* padding: 2px 0.5%; */
+    border:1px #fff solid;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.clears:hover li{
+    background-color: bisque;
+}
+.tableline:hover li{
+    background-color: bisque;
+}
+.boxfont{
+    display: flex;
+    flex-wrap: wrap;
+    height: 20px;
+    margin-top: -5px;
+    flex-direction: column;
+}

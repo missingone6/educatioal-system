@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#schoolYearBox,
+#searchbtn{
+    width: 100%;
+    margin: auto;
+    height: 130px;
+    line-height: 55px;
+}
+#determine{
+    margin-top: 1%;
+}
+.tableline{
+    width: 2510px;
+}
+.tabs{
+    width: 130px;
+}
+.inp{
+    height: 20px;
+    line-height: 20px;
+}
+.inpt{
+    height: 20px;
+    line-height: 20px;
+}
+.define{
+    display: inline-block;
+    width: 5%;
+    height: 30px;
+    margin-right: 2%;
+    margin-top: 2%;
+}

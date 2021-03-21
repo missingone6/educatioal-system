@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.cblue{
+    color: blue;
+}
+.cb0483d4{
+    background-color: #0483d4;
+    /* 头顶背景 */
+}
+.cbf0f0f0{
+    background-color: #f0f0f0;
+    /* 主题背景颜色 */
+}
+.cb337ab7{
+    background-color: #337ab7;  
+    /* 按钮颜色 */
+}
+.cbfff{
+    background-color: #fff;
+}
+.cfff{
+    color: #fff;
+}
+.ca94442{
+    color: #a94442;
+    /* 警示字体颜色 */
+}
+.cf0f0f0{
+    color: #f0f0f0;
+}
+.h50{
+    height: 50px;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.mg1{
+    margin: 1px;
+}
+/* 顶部蓝色最外层 */
+#topline{
+    width: 100%;
+}
+/* 顶部蓝色里层文字框 */
+#toplinebox{
+    width: 90%;
+    margin: auto;
+}
+/* 顶部蓝色文字样式 */
+#toplinetest{
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+/* 学年  学期  查询 整体的框框样式 */
+#searchbox{
+    width: 95%;
+    margin: auto;
+    margin-top: 40px;
+    border: 1px #f0f0f0 solid;
+    overflow: hidden;
+    /* box-shadow: 1px 1px 20px rgb(0, 0, 0,0.5); */
+}
+li{
+    cursor: pointer;
+}
+li:hover {
+    background-color: bisque;
+}
+ul{
+    list-style: none;
+}
+#searchbtn{
+    width: 100%;
+}
+#determine{
+    width: 5%;
+}
+.yeartitle{
+    margin-left: 3%;
+    height: 70px;
+    line-height: 70px;
+}
+.yeartop,
+.yeartop1,
+.yeartop2{
+    width: 20%;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+.yearul,
+.yearul1{
+    height: 70px;
+	display: none;
+    overflow: auto;
+    background-color: #fff;
+}
+.yeartop1:hover .yearul1{
+	display: block;
+	clear: both;
+}
+.yeartop:hover .yearul{
+	display: block;
+	clear: both;
+}
+span div{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align:center;
+    border: 1px #f0f0f0 solid;
+    width: 40%;
+    /* margin-left: 3%; */
+    /* overflow: hidden; */
+}
+/* #schoolYearBox,
+#searchbtn{
+    width: 100%;
+    margin: auto;
+    height: 90px;
+    line-height: 55px;
+}*/
+#yeartext,
+#yeartext1{
+    border: none !important;
+}
+#searchbtn{ 
+    margin-top: 20px;
+}
+.inputbox{
+    margin-right: 2%;
+}
+.determine{
+    text-align: center;
+    margin-right: 4%;
+    margin-top: 2%;
+    height: 30px;
+    line-height: 30px;
+    border: 1px #f0f0f0 solid;
+    border-radius: 5px;
+}
+#box{
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+    overflow: hidden;
+}

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/main_2000.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main_850.css" media="screen and (max-width:850px)">
+    <link rel="icon" href="./images/favicon.ico">
+
     <!-- <link rel="stylesheet" href="./css/main_2000.css" media="screen and (max-width:2000px)"> -->
 </head>
 
@@ -24,8 +26,13 @@
             <div href="#" class="fr h-box">
                 <img src="./images/user_logo.jpg" alt="个人" class="headPortrait">
                 <ul class="h-dropDownList">
-                    <li class="h-item h-changePw">修改密码</li>
-                    <li class="h-item">退出</li>
+                    <li class="h-item h-changePw">
+                        <a href="#">修改密码</a>
+                        
+                    </li>
+                    <li class="h-item">
+                        <a href="index.html">退出</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -88,18 +95,23 @@
 
                     <ul class="smallmenu">
                         <li class="small-item">
-                            <a href="#">
-                                <span>重修报名</span>
+                            <a href="inquirePersonalInf.html">
+                                <span>查询个人信息</span>
                             </a>
                         </li>
                         <li class="small-item">
                             <a href="#">
-                                <span>考试项目报名</span>
+                                <span>学籍预警查询</span>
                             </a>
                         </li>
                         <li class="small-item">
                             <a href="#">
-                                <span>教学项目报名</span>
+                                <span>学生课表查询</span>
+                            </a>
+                        </li>
+                        <li class="small-item">
+                            <a href="#">
+                                <span>选课名单查询</span>
                             </a>
                         </li>
                     </ul>
@@ -370,10 +382,10 @@
         </div>
         <div class="row">
             <div class="rowLeft">
-                <div class="fr">*原密码:</div>
+                <!-- <div class="fr">*原密码:</div> -->
             </div>
             <div class="rowRight">
-                <input type="password" placeholder="请输入原密码" class="rowInput">
+                <!-- <input type="password" placeholder="请输入原密码" class="rowInput"> -->
             </div>
         </div>
         <div class="row">
@@ -381,22 +393,23 @@
                 <div class="fr">*新密码:</div>
             </div>
             <div class="rowRight">
-                <input type="password" placeholder="请输入新密码" class="rowInput">
+                <input type="password" placeholder="请输入新密码" class="rowInput pw1">
             </div>
         </div>
-        <div class="row">
-            <div class="rowLeft">
-            </div>
-            <div class="rowRight">
 
-            </div>
-        </div>
         <div class="row">
             <div class="rowLeft">
                 <div class="fr">*重复新密码:</div>
             </div>
             <div class="rowRight">
-                <input type="password" placeholder="请输入新密码" class="rowInput">
+                <input type="password" placeholder="请输入新密码" class="rowInput pw2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="rowLeft">
+            </div>
+            <div class="rowRight r-tips">
+                
             </div>
         </div>
         <div class="row2">

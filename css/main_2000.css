@@ -25,7 +25,9 @@ body{
     height: 60px;
     cursor: pointer;
 }
-
+#header .h-item>a{
+    padding: 5px 18px;
+}
 #header .h-box .h-dropDownList{
     display: none;
     height: 60px;
@@ -287,4 +289,8 @@ body{
     width: 100%;
     height: 100%;
     background-color: #3c3c3c;
+}
+
+.r-tips{
+    color:brown;
 }

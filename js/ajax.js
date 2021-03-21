@@ -1,5 +1,4 @@
 "use strict";
-// import {ajax} from './ajax'
 function ajax(method, url, data, success, fail, token) {
     let xml;
     if (window.XMLHttpRequest) {
@@ -31,22 +30,6 @@ function ajax(method, url, data, success, fail, token) {
         }
     };
 }
-document.getElementsByClassName('m-submit')[0].onclick = function () {
-    const user = document.getElementById('user').value;
-    const password = document.getElementById('password').value;
-    ajax("post", "http://www.xinill.cn:80/user/login", `user=${user}&password=${password}`, function (xml) {
-        let res = JSON.parse(xml.responseText);
-        console.log(res);
-        // 登录成功
-        if (res.data === true) {
-            console.log('token', xml.getResponseHeader('token'));
-            localStorage.token = xml.getResponseHeader('token');
-            // return false;
-            window.location.href = 'main.html';
-        }
-        else {
-            alert(res.msg);
-        }
-    }, function (xml) {
-    }, "");
+module.exports = function foo() {
+    console.log('exports!!!');
 };

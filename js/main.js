@@ -1,4 +1,36 @@
 "use strict";
+// import {ajax} from './ajax';
+function ajax(method, url, data, success, fail, token) {
+    let xml;
+    if (window.XMLHttpRequest) {
+        xml = new XMLHttpRequest();
+    }
+    else {
+        xml = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (method.toLowerCase() === 'post') {
+        xml.open(method, url, true);
+        xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        if (token) {
+            xml.setRequestHeader("token", token);
+        }
+        xml.send(data);
+    }
+    else if (method.toLowerCase() === 'get') {
+        xml.open(method, `url?${data}`, true);
+        xml.send();
+    }
+    xml.onreadystatechange = function () {
+        if (xml.readyState == 4) {
+            if (xml.status == 200) {
+                success(xml);
+            }
+            else {
+                fail(xml);
+            }
+        }
+    };
+}
 const fatherLi = document.getElementsByClassName('drop-downList')[0];
 const ul = document.getElementsByClassName('smallmenu');
 const li = document.getElementsByClassName('item');
@@ -61,3 +93,22 @@ for (let i = 0; i < c_close.length; i++) {
         shadow.style.display = 'none';
     };
 }
+// 修改密码
+document.getElementsByClassName('c-submit')[0].onclick = function () {
+    const pw1 = document.getElementsByClassName('pw1')[0].value;
+    const pw2 = document.getElementsByClassName('pw2')[0].value;
+    // 检测两次密码是否输入一致
+    if (pw1 === pw2) {
+        ajax("post", "http://www.xinill.cn:80/user/inform/updatepwd", `password=${pw1}`, function (xml) {
+            console.log(xml, pw1);
+            console.log("密码修改成功");
+            document.getElementsByClassName('r-tips')[0].innerHTML = '密码修改成功';
+        }, function (xml) {
+            console.log(xml, pw1);
+            console.log("很抱歉，请联系管理员，密码修改失败");
+        }, localStorage.token);
+    }
+    else {
+        document.getElementsByClassName('r-tips')[0].innerHTML = '很抱歉，两次密码输入不同';
+    }
+};

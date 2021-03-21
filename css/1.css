@@ -1,0 +1,95 @@
+{
+    "schoolyear":"2020",       //学年
+    'term':'2',                 //学期
+    'course':'数据结构',        //课程名称
+    'time':'1.11 8:00-10:00',   //考试时间
+    'place':'fz233',            //考试地点
+    'campus':'长安校区东区',    //考试校区
+    'seatnumber':'22',          //座位号
+    'again':'否',               //是否重修
+    'id':'04191199',            //学号
+    'name':'张三'，             //姓名
+    'sex':'女',                 //性别
+    'class':'计科2001',         //班级
+    'tercher':'章',             //教师
+    'setup':'计算机院',         //开设学院
+    'testnumber':'xt007',       //试卷编号
+    'grade':'2020',             //年级
+    'college':'计算机学院',     //所在学院
+    'testtype':'院考'，         //考试类别
+}
+{
+    {
+    "schoolyear":"2020",       //学年
+    'term':'2',                 //学期
+    'coursecode':'JS100081',    //课程代码
+    'course':'数据结构',        //课程名称
+    'credit':'2',               //学分
+    'educlass':'操作系统A-0003', //教学班
+    'choicetime':'2021-1-18 11:47', //选课时间
+    'time':'周一第1-2节(1-18)',     //上课时间
+    'place':'ff303',                //上课地点
+    'teacher':'张三',               //任课老师
+    'remarks':'',                   //选课备注
+    'state':'未确认'，             //确认状态
+    },
+    {
+    'schoolyear':"2020",       //学年
+    'term':'2',                 //学期
+    'coursecode':'JS100081',    //课程代码
+    'course':'数据结构',        //课程名称
+    'credit':'2',               //学分
+    'educlass':'操作系统A-0003', //教学班
+    'choicetime':'2021-1-18 11:47', //选课时间
+    'time':'周一第1-2节(1-18)',     //上课时间
+    'place':'ff303',                //上课地点
+    'teacher':'张三',               //任课老师
+    'remarks':'',                   //选课备注
+    'state':'未确认'，             //确认状态
+    }
+}
+{
+    'course':'大学英语'，    //课程名称
+    'week':'1-18',          
+    'place':'长安校区东区 fz233',
+    'teacher':'张三',
+    'educlass':'大英a2333',
+    'testtype':'校考',
+    'another':'无',
+    'teachtime':'讲课:32'
+    'weektime':'4',
+    'alltime':'64',
+    'credit':'4'
+},
+{
+    'detailed':'30-60',    //查看  （这个里面改成对象  然后前面是平时成绩后面是期末考试成绩）
+    'schoolyear':'2020-2021',   //学年
+    'term':'1',                 //学期
+    'coursecode':'js09876',     //课程代码
+    'course':'数据结构',        //课程名称
+    'coursetype':'必修',        //课程性质（选修||必修）
+    'credit':'2',               //学分
+    'achievement':'90',         //成绩
+    'achievementAnother':'无',  //成绩备注（正常过了的就是无   还有两种情况就是补考和选修）
+    'GPA':'4.00',               //绩点
+    'achievementAnothe':'无',     //成绩性质
+    'delets':'否',              //是否成绩作废
+    'degreeCourse':'是',        //是否学位课程
+    'setup':'计算机院',         //开设学院
+    'courseMark':'无',          //课程标记
+    'typeOfCourse':'专业课',      //课程类别
+    'courseHome':'无',           //课程归属
+    'teachClass':'计科1906',      //教学班
+    'teacher':'曾艳',               //任教老师
+    'testType':'院考',              //考核方式
+    'id':'04190000',            //学号
+    'name':'张三',              //姓名
+    'studentType':'无',         //学生类别
+    'college':'计算机院',       //学院
+    'major':'计科',             //专业
+    'grade':'2020',             //年级
+    'class':'1906',             //班级
+    'studentMark':'无',         //学生标记
+}
+
+上面有的内些无  可以用空字符串代替

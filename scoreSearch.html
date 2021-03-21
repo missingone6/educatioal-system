@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/scoreSearch.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="icon" href="./font/favicon.ico">
+    <title>学生成绩查询</title>
+</head>
+<body class="cbf0f0f0">
+    <div id="topline" class="cb0483d4 h50">
+        <div id="toplinebox" class="cb333 h50">
+            <span id="toplinetest" class="cfff">学生成绩查询</span>
+        </div>
+    </div>
+    <div id="box" class="cbfff">
+        <div class="cbfff" id="searchbox">
+            <!-- <div id="determine">查询</div> -->
+            <div id="schoolYearBox" class="cbfff fl">
+                <span class=" inputbox">
+                   <span class="yeartitle fl"><span class="ca94442 mg1">*</span>学年</span> <div class="yeartop fl"><div id="yeartext">2021-2022</div>
+                        <span>
+                            <ul id="yearul" class="yearul">
+                                <li class="year">2020-2021</li>
+                                <li class="year">2019-2020</li>
+                                <li class="year">2018-2019</li>
+                                <li class="year">2017-2018</li>
+                                <li class="year">2016-2017</li>
+                                <li class="year">2015-2016</li>
+                                <li class="year">2014-2015</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <b></b>
+                </span>
+                <span class="inputbox ">
+                    <span class="yeartitle fl"><span class="ca94442 mg1">*</span>学期</span> <div class="yeartop1 fl"><div id="yeartext1">1</div>
+                        <span>
+                            <ul id="yearul1" class="yearul1">
+                                <li class="year1">1</li>
+                                <li class="year1">2</li>
+                                <li class="year1">全部</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <!-- <b></b> -->
+                </span>
+                <!-- <span class="inputbox ">
+                    <span class="yeartitle fl"><span class="ca94442 mg1">*</span>学期</span> <div class="yeartop2 fl"><div id="yeartext2">降序</div>
+                        <span>
+                            <ul id="yearul2" class="yearul2">
+                                <li class="year2">升序</li>
+                                <li class="year2">降序</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <b></b>
+                </span> -->
+                <div id="searchbtn" class="cbf0f0f0">
+                    <div class="ca94442 fl words">不合格的用红色表示，通过补考或重修及格用蓝线表示</div>
+                    <button id="determine" class="determine cfff cb337ab7 fr">查询</button>
+                </div>
+            </div>
+        </div>
+        <br class="cbfff">
+        <div id="scoreTable">
+                <ul id="tableline" class="tableline">
+                    <li id="detailed" class="tableTop cbf0f0f0 fl td tabs">查看<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="schoolyear" class="tableTop cbf0f0f0 fl td tabs">学年<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="term" class="tableTop cbf0f0f0 fl td tabs">学期<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="coursecode" class="tableTop cbf0f0f0 fl td tabs">课程代码<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="course" class="tableTop cbf0f0f0 fl td tabs">课程名称<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="coursetype" class="tableTop cbf0f0f0 fl td tabs">课程性质<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="credit" class="tableTop cbf0f0f0 fl td tabs">学分<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="achievement" class="tableTop cbf0f0f0 fl td tabs">成绩<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="achievementAnothe" class="tableTop cbf0f0f0 fl td tabs">成绩备注<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="gpa" class="tableTop cbf0f0f0 fl td tabs">绩点<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="achievementType" class="tableTop cbf0f0f0 fl td tabs">成绩性质<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="delets" class="tableTop cbf0f0f0 fl td tabs">是否成绩作废<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="degreeCourse" class="tableTop cbf0f0f0 fl td tabs">是否学位课程<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="setup" class="tableTop cbf0f0f0 fl td tabs">开设学院<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="courseMark" class="tableTop cbf0f0f0 fl td tabs">课程标记<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="typeOfCourse" class="tableTop cbf0f0f0 fl td tabs">课程类别<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="courseHome" class="tableTop cbf0f0f0 fl td tabs">课程归属<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="teachClass" class="tableTop cbf0f0f0 fl td tabs">教学班<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="teacher" class="tableTop cbf0f0f0 fl td tabs">任教教师<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="testType" class="tableTop cbf0f0f0 fl td tabs">考核方式<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="id" class="tableTop cbf0f0f0 fl td tabs">学号<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="name" class="tableTop cbf0f0f0 fl td tabs">姓名<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="studentType" class="tableTop cbf0f0f0 fl td tabs">学生类别<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="college" class="tableTop cbf0f0f0 fl td tabs">学院<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="major" class="tableTop cbf0f0f0 fl td tabs">专业<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="grade" class="tableTop cbf0f0f0 fl td tabs">年级<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="class" class="tableTop cbf0f0f0 fl td tabs">班级<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                    <li id="studentMark" class="tableTop cbf0f0f0 fl td tabs">学生标记<span class=" boxfont"><span class="iconfont iconfont1">&#xe618;</span><span class="iconfont iconfont2">&#xe6aa;</span></span></li>
+                </ul>
+        </div>
+    </div>
+    <!-- <script src="./js/Ajax.js"></script> -->
+    <script src="./js/scoreSearch.js"></script>
+</body>
+</html>

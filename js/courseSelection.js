@@ -6,12 +6,13 @@ var year1 = document.getElementsByClassName("year1");
 var year = document.getElementsByClassName("year");
 var determine = document.getElementById("determine");
 var scoreTable = document.getElementById("scoreTable");
-let inp = document.getElementById("inp");
-let defines = document.getElementById("defines");
-let token1 = localStorage.token;
+var inp = document.getElementById("inp");
+var defines = document.getElementById("defines");
+var token1 = localStorage.token;
+var data_public;
 //ajax
 function ajax(method, url, data, success, fail, token) {
-    let xml;
+    var xml;
     if (window.XMLHttpRequest) {
         xml = new XMLHttpRequest();
     }
@@ -27,7 +28,7 @@ function ajax(method, url, data, success, fail, token) {
         xml.send(data);
     }
     else if (method.toLowerCase() === 'get') {
-        xml.open(method, `url?${data}`, true);
+        xml.open(method, "url?" + data, true);
         xml.send();
     }
     xml.onreadystatechange = function () {
@@ -43,26 +44,32 @@ function ajax(method, url, data, success, fail, token) {
     // return xml;  
 }
 function change1() {
-    for (let i = 0; i < year.length; i++) {
-        year[i].onclick = () => {
+    var _loop_1 = function (i) {
+        year[i].onclick = function () {
             yeartext.innerText = year[i].innerText;
         };
+    };
+    for (var i = 0; i < year.length; i++) {
+        _loop_1(i);
     }
-    for (let i = 0; i < year1.length; i++) {
-        year1[i].onclick = () => {
+    var _loop_2 = function (i) {
+        year1[i].onclick = function () {
             yeartext1.innerText = year1[i].innerText;
         };
+    };
+    for (var i = 0; i < year1.length; i++) {
+        _loop_2(i);
     }
 }
 change1();
-determine.onclick = () => {
+determine.onclick = function () {
     // console.log("1")
-    let num = yeartext.innerText.split("-");
+    var num = yeartext.innerText.split("-");
     // let xml:any;
-    let num1 = yeartext1.innerText;
+    var num1 = yeartext1.innerText;
     // console.log(num1)
-    let data = ajax("post", "http://www.xinill.cn:80/class/confirm", `schoolyear=${num[0]}&term=${num1}`, function (xml) {
-        let res = JSON.parse(xml.responseText);
+    var data = ajax("post", "http://www.xinill.cn:80/class/confirm", "schoolyear=" + num[0] + "&term=" + num1, function (xml) {
+        var res = JSON.parse(xml.responseText);
         console.log(res);
         console.log(res.data);
         // 登录成功 term
@@ -72,6 +79,7 @@ determine.onclick = () => {
             localStorage.token = xml.getResponseHeader('token');
             // return false;
             // window.location.href = 'main.html';
+            data_public = res.data;
             reclears(res.data);
             addItem(res.data);
         }
@@ -81,38 +89,57 @@ determine.onclick = () => {
     }, function (xml) { }, token1);
     // console.log(data)
 };
-//发送缺人请求
-defines.onclick = () => {
-    console.log(1);
-    let input = document.getElementsByClassName("inp");
-    let arr = [];
-    // console.log(arr);
-    for (let i = 0; i < input.length; i++) {
-        console.log(input[i]);
-        if (input[i].checked) {
-            arr[i] = "1";
+//发送确认请求
+defines.onclick = function () {
+    var inp = document.getElementsByClassName("inp2");
+    var arr = [];
+    var j = 0;
+    for (var _i = 0, inp_1 = inp; _i < inp_1.length; _i++) {
+        var i = inp_1[_i];
+        console.log(i);
+        if (i.checked) {
+            if (i.classList.contains("inp") == true) {
+                arr.push(data_public[j].cid);
+            }
+            j++;
+            console.log("aaa");
         }
     }
-    // console.log(arr);
+    console.log(arr);
+    ajax("post", "http://www.xinill.cn:80/class/setChooseStatement", "cid=" + arr, function (xml) {
+        var res = JSON.parse(xml.responseText);
+        console.log(res);
+        console.log(res.data);
+        // 登录成功 term
+        if (res.data != null) {
+            localStorage.token = xml.getResponseHeader('token');
+            // return false;
+            // window.location.href = 'main.html';
+            determine.onclick();
+        }
+        else {
+            alert(res.msg);
+        }
+    }, function (xml) { }, token1);
+    console.log(arr);
 };
-inp.onclick = () => {
-    // console.log(1);
-    let input = document.getElementsByClassName("inp");
+inp.onclick = function () {
+    var input = document.getElementsByClassName("inp");
     if (inp.checked) {
-        for (let i = 0; i < input.length; i++) {
+        for (var i = 0; i < input.length; i++) {
             input[i].checked = true;
         }
     }
     else {
-        for (let i = 0; i < input.length; i++) {
+        for (var i = 0; i < input.length; i++) {
             input[i].checked = false;
         }
     }
 };
 //防止重复
 function reclears(data) {
-    let needClears = document.getElementsByClassName("clears");
-    let i = 0;
+    var needClears = document.getElementsByClassName("clears");
+    var i = 0;
     while (i < needClears.length) {
         needClears[i].parentNode.removeChild(needClears[i]);
     }
@@ -120,26 +147,31 @@ function reclears(data) {
 //添加列表
 function addItem(data) {
     console.log(data);
-    // console.log(i);
-    for (let j in data) {
-        let ul = document.createElement("ul");
+    for (var j in data) {
+        var ul = document.createElement("ul");
         ul.classList.add("clears");
-        // console.log(data[j]);
-        for (let k in data[j]) {
-            // console.log(data[j][k]);
+        for (var k in data[j]) {
+            if (k == 'cid') {
+                continue;
+            }
             if (k == "schoolyear") {
-                // console.log("添加input")
-                let li = creatli();
-                let input = document.createElement("input");
-                // input.role= "chechbox";
-                // input.tupe = "checkbox";
+                var li_1 = creatli();
+                var input = document.createElement("input");
                 input.setAttribute("type", "checkbox");
-                input.classList.add("inp");
-                li.appendChild(input);
-                ul.appendChild(li);
+                if (data[j].state == "已确认") {
+                    input.classList.add("inp2");
+                    input.classList.add("inp1");
+                    input.checked = true;
+                }
+                else {
+                    input.classList.add("inp2");
+                    input.classList.add("inp");
+                }
+                li_1.appendChild(input);
+                ul.appendChild(li_1);
             }
             // console.log(data[j])
-            let li = creatli();
+            var li = creatli();
             li.innerHTML = data[j][k];
             ul.appendChild(li);
         }
@@ -149,7 +181,7 @@ function addItem(data) {
 }
 //创建li
 function creatli() {
-    let li = document.createElement("li");
+    var li = document.createElement("li");
     li.classList.add("tableTop");
     // li.classList.add("cbf0f0f0");
     li.classList.add("fl");

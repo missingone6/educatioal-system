@@ -42,7 +42,7 @@ document.getElementsByClassName('m-submit')[0].onclick = function () {
             console.log('token', xml.getResponseHeader('token'));
             localStorage.token = xml.getResponseHeader('token');
             // return false;
-            window.location.href = 'scoreSearch.html';
+            window.location.href = 'courseSelection.html';
         }
         else {
             alert(res.msg);

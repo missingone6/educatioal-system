@@ -5,9 +5,9 @@ var year1 = document.getElementsByClassName("year1");
 var year = document.getElementsByClassName("year");
 var determine = document.getElementById("determine");
 var scoreTable = document.getElementById("scoreTable");
-let token3 = localStorage.token;
+var token3 = localStorage.token;
 function ajax(method, url, data, success, fail, token) {
-    let xml;
+    var xml;
     if (window.XMLHttpRequest) {
         xml = new XMLHttpRequest();
     }
@@ -23,7 +23,7 @@ function ajax(method, url, data, success, fail, token) {
         xml.send(data);
     }
     else if (method.toLowerCase() === 'get') {
-        xml.open(method, `url?${data}`, true);
+        xml.open(method, "url?" + data, true);
         xml.send();
     }
     xml.onreadystatechange = function () {
@@ -39,24 +39,30 @@ function ajax(method, url, data, success, fail, token) {
     // return xml;  
 }
 function change2() {
-    for (let i = 0; i < year.length; i++) {
-        year[i].onclick = () => {
+    var _loop_1 = function (i) {
+        year[i].onclick = function () {
             yeartext.innerText = year[i].innerText;
         };
+    };
+    for (var i = 0; i < year.length; i++) {
+        _loop_1(i);
     }
-    for (let i = 0; i < year1.length; i++) {
-        year1[i].onclick = () => {
+    var _loop_2 = function (i) {
+        year1[i].onclick = function () {
             yeartext1.innerText = year1[i].innerText;
         };
+    };
+    for (var i = 0; i < year1.length; i++) {
+        _loop_2(i);
     }
 }
 change2();
-determine.onclick = () => {
-    let num = yeartext.innerText.split("-");
+determine.onclick = function () {
+    var num = yeartext.innerText.split("-");
     // let xml:any;
-    let num1 = yeartext1.innerText;
-    ajax("post", "http://www.xinill.cn:80/class/examination", `schoolyear=${num[0]}&term=${num}`, function (xml) {
-        let res = JSON.parse(xml.responseText);
+    var num1 = yeartext1.innerText;
+    ajax("post", "http://www.xinill.cn:80/class/examination", "schoolyear=" + num[0] + "&term=" + num, function (xml) {
+        var res = JSON.parse(xml.responseText);
         // console.log(res);
         // console.log(res.data);
         // 登录成功 term
@@ -77,8 +83,8 @@ determine.onclick = () => {
 };
 //防止重复
 function rclears() {
-    let needClears = document.getElementsByClassName("clears");
-    let i = 0;
+    var needClears = document.getElementsByClassName("clears");
+    var i = 0;
     while (i < needClears.length) {
         needClears[i].parentNode.removeChild(needClears[i]);
     }
@@ -86,12 +92,12 @@ function rclears() {
 //添加列表
 function addItems(Datas) {
     // console.log("1")
-    for (let i in Datas) {
-        let ul = document.createElement("ul");
+    for (var i in Datas) {
+        var ul = document.createElement("ul");
         ul.classList.add("clears");
         // console.log(data[i]);
-        for (let j in Datas[i]) {
-            let li = creatli1();
+        for (var j in Datas[i]) {
+            var li = creatli1();
             li.innerHTML = Datas[i][j];
             ul.appendChild(li);
         }
@@ -101,7 +107,7 @@ function addItems(Datas) {
 }
 //创建li
 function creatli1() {
-    let li = document.createElement("li");
+    var li = document.createElement("li");
     li.classList.add("tableTop");
     // li.classList.add("cbf0f0f0");
     li.classList.add("fl");

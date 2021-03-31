@@ -1,6 +1,6 @@
 "use strict";
 function ajax(method, url, data, success, fail, token) {
-    let xml;
+    var xml;
     if (window.XMLHttpRequest) {
         xml = new XMLHttpRequest();
     }
@@ -16,7 +16,7 @@ function ajax(method, url, data, success, fail, token) {
         xml.send(data);
     }
     else if (method.toLowerCase() === 'get') {
-        xml.open(method, `url?${data}`, true);
+        xml.open(method, "url?" + data, true);
         xml.send();
     }
     xml.onreadystatechange = function () {
@@ -33,4 +33,4 @@ function ajax(method, url, data, success, fail, token) {
 // export {
 //     ajax
 // }
-module.exports = { ajax };
+module.exports = { ajax: ajax };

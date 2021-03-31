@@ -12,9 +12,9 @@ var td = document.getElementsByTagName("td");
 var tabletitle = document.getElementById("tabletitle");
 var idnumber = document.getElementById("idnumber");
 var experiment = document.getElementById("experiment");
-let token2 = localStorage.token;
+var token2 = localStorage.token;
 function ajax(method, url, data, success, fail, token) {
-    let xml;
+    var xml;
     if (window.XMLHttpRequest) {
         xml = new XMLHttpRequest();
     }
@@ -30,7 +30,7 @@ function ajax(method, url, data, success, fail, token) {
         xml.send(data);
     }
     else if (method.toLowerCase() === 'get') {
-        xml.open(method, `url?${data}`, true);
+        xml.open(method, "url?" + data, true);
         xml.send();
     }
     xml.onreadystatechange = function () {
@@ -45,13 +45,13 @@ function ajax(method, url, data, success, fail, token) {
     };
     // return xml;  
 }
-determine.onclick = () => {
-    let num = yeartext.innerText.split("-");
+determine.onclick = function () {
+    var num = yeartext.innerText.split("-");
     // let xml:any;
-    let num1 = yeartext1.innerText;
+    var num1 = yeartext1.innerText;
     // console.log(num1)
-    let data = ajax("post", "http://www.xinill.cn:80/class/timeline", `schoolyear=${num[0]}&term=${num1}`, function (xml) {
-        let res = JSON.parse(xml.responseText);
+    var data = ajax("post", "http://www.xinill.cn:80/class/timeline", "schoolyear=" + num[0] + "&term=" + num1, function (xml) {
+        var res = JSON.parse(xml.responseText);
         console.log(res);
         console.log(res.data);
         // 登录成功 term
@@ -74,22 +74,28 @@ determine.onclick = () => {
 choise();
 //改变学期学年文本
 function choise() {
-    for (let i = 0; i < year.length; i++) {
-        year[i].onclick = () => {
+    var _loop_1 = function (i) {
+        year[i].onclick = function () {
             yeartext.innerText = year[i].innerText;
         };
+    };
+    for (var i = 0; i < year.length; i++) {
+        _loop_1(i);
     }
-    for (let i = 0; i < year1.length; i++) {
-        year1[i].onclick = () => {
+    var _loop_2 = function (i) {
+        year1[i].onclick = function () {
             yeartext1.innerText = year1[i].innerText;
         };
+    };
+    for (var i = 0; i < year1.length; i++) {
+        _loop_2(i);
     }
 }
 //清除上一个课表
 function removeChild(data) {
-    let child = document.getElementsByClassName("clears");
+    var child = document.getElementsByClassName("clears");
     // console.log(child)
-    let i = 0;
+    var i = 0;
     while (i < child.length) {
         child[i].parentNode.removeChild(child[i]);
     }
@@ -97,7 +103,7 @@ function removeChild(data) {
 //改变课表题头和学号
 function changeID(data) {
     tabletitle.innerHTML = data.name + '的课表';
-    let div = document.createElement('div');
+    var div = document.createElement('div');
     div.innerHTML = '学号：' + data.id;
     div.classList.add("fr");
     div.classList.add("font16");
@@ -106,15 +112,15 @@ function changeID(data) {
 }
 // 添加课表每个单元格格式
 function additem(data) {
-    let item = document.createElement("div");
+    var item = document.createElement("div");
     item.classList.add('clears');
     // console.log("生成div")
     item.classList.add('text-left');
-    let span = document.createElement('span');
+    var span = document.createElement('span');
     span.classList.add('typeface1');
     item.appendChild(span);
-    for (let i = 0; i < 10; i++) {
-        let p = document.createElement('p');
+    for (var i = 0; i < 10; i++) {
+        var p = document.createElement('p');
         p.classList.add('typeface2');
         item.appendChild(p);
     }
@@ -124,7 +130,7 @@ function additem(data) {
 }
 // 添加每个单元格的文字
 function additemtext(item, data) {
-    let items = item.children;
+    var items = item.children;
     items[0].innerHTML = data.course;
     items[1].innerHTML = data.week;
     items[2].innerHTML = data.place;
@@ -142,7 +148,7 @@ function additemtext(item, data) {
 function changetab(item, data) {
     // console.log(item)
     // console.log(data)
-    let arr = data.num.split("-");
+    var arr = data.num.split("-");
     // console.log(arr)
     // console.log(tr[arr[0]*2-1].children)
     if (tr[arr[0] * 2 - 1].children.length == 7) {
@@ -162,14 +168,14 @@ function changetab(item, data) {
 }
 // 遍历对象 更新课表
 function changetable(data) {
-    for (let i in data) {
+    for (var i in data) {
         // console.log(i)
-        for (let j in data) {
+        for (var j in data) {
             // console.log(datas[i][j]);
             if (data[i][j] != null) {
-                let datas = data[i][j];
+                var datas = data[i][j];
                 // console.log(i,j)
-                let item = additem(datas);
+                var item = additem(datas);
                 changetab(item, datas);
             }
         }

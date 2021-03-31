@@ -11,7 +11,8 @@ var scoreTable: any = document.getElementById("scoreTable");
 let inp: any = document.getElementById("inp");
 let defines: any = document.getElementById("defines");
 
-let token1=localStorage.token
+let token1=localStorage.token;
+let data_public :any;
 
 //ajax
 function ajax(method:string,url:string,data:string,success:any,fail:any,token:string){
@@ -77,6 +78,7 @@ determine.onclick = () => {
             localStorage.token = xml.getResponseHeader('token');
             // return false;
             // window.location.href = 'main.html';
+            data_public = res.data;
             reclears(res.data);
             addItem(res.data);
         }
@@ -87,23 +89,41 @@ determine.onclick = () => {
     // console.log(data)
     
 };
-//发送缺人请求
+//发送确认请求
 defines.onclick = () => {
-  console.log(1);
-  let input: any = document.getElementsByClassName("inp");
+  let inp: any = document.getElementsByClassName("inp2");
   let arr: Array<string> = [];
-  // console.log(arr);
-  for (let i = 0;i<input.length;i++ ) {
-    console.log(input[i])
-    if (input[i].checked) {
-      arr[i]= "1";
+  let j:number=0;
+  for (let i of inp) {
+    console.log(i);
+    if (i.checked ) {
+      if(i.classList.contains("inp")==true){
+        arr.push(data_public[j].cid);
+      }     
+      j++;
+      console.log("aaa")
     }
   }
-  // console.log(arr);
+  console.log(arr)
+  ajax("post","http://www.xinill.cn:80/class/setChooseStatement",`cid=${arr}`,function (xml:any) {
+        let res = JSON.parse(xml.responseText);
+        console.log(res);
+        console.log(res.data);
+        // 登录成功 term
+        if (res.data != null) {
+            localStorage.token = xml.getResponseHeader('token');
+            // return false;
+            // window.location.href = 'main.html';
+            determine.onclick();
+        }
+        else {
+            alert(res.msg);
+        }
+    }, function (xml:any) {},token1);
+  console.log(arr);
 };
 
 inp.onclick = () => {
-  // console.log(1);
   let input: any = document.getElementsByClassName("inp");
   if (inp.checked) {
     for (let i = 0; i < input.length; i++) {
@@ -126,24 +146,26 @@ function reclears(data:any) {
 //添加列表
 function addItem(data:any): any {
   console.log(data)
-  
-    // console.log(i);
-
-
-          for (let j in data) {
+            for (let j in data) {
             let ul: any = document.createElement("ul");
             ul.classList.add("clears");
-            // console.log(data[j]);
             for (let k in data[j]) {
-              // console.log(data[j][k]);
+              if(k=='cid'){
+                continue;
+              }
               if (k == "schoolyear") {
-                // console.log("添加input")
                 let li: any = creatli();
                 let input: any = document.createElement("input");
-                // input.role= "chechbox";
-                // input.tupe = "checkbox";
                 input.setAttribute("type", "checkbox");
-                input.classList.add("inp");
+                if(data[j].state=="已确认"){
+                  input.classList.add("inp2");
+                  input.classList.add("inp1");
+                  input.checked = true;
+                }else{
+                  input.classList.add("inp2");
+                  input.classList.add("inp");
+                }
+                
                 li.appendChild(input);
                 ul.appendChild(li);
               }
